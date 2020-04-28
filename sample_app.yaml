@@ -1,0 +1,12 @@
+service: outbound-ip-check
+runtime: go113
+env: standard
+vpc_access_connector:
+  name: "projects/<projectName>/locations/asia-northeast1/connectors/<serverless vpc>"
+
+instance_class: F2
+
+
+handlers:
+  - url: /.*
+    script: auto
